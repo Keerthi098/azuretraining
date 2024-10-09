@@ -5,6 +5,11 @@
 			"referenceName": "Output",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"filename": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [
@@ -28,7 +33,10 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "Houseinfo"
+			"table": {
+				"value": "@dataset().filename",
+				"type": "Expression"
+			}
 		}
 	}
 }

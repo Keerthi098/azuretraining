@@ -60,13 +60,22 @@
 				"outputs": [
 					{
 						"referenceName": "OutputSQLTable",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": {
+								"value": "@pipeline().parameters.outputfilename",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
 		"parameters": {
 			"InputFilename": {
+				"type": "string"
+			},
+			"outputfilename": {
 				"type": "string"
 			}
 		},
