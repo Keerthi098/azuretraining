@@ -1,0 +1,45 @@
+{
+	"name": "OutputSQLTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Output",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"outputfilenamepara": {
+				"type": "string"
+			},
+			"outputcontainerpara": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "HouseID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "HouseNumber",
+				"type": "varchar"
+			},
+			{
+				"name": "Name",
+				"type": "varchar"
+			},
+			{
+				"name": "phonenumber",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().outputfilenamepara",
+				"type": "Expression"
+			}
+		}
+	}
+}
