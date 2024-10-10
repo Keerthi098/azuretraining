@@ -5,10 +5,6 @@
 			"GlobalParameter": {
 				"type": "string",
 				"value": "input"
-			},
-			"schema": {
-				"type": "string",
-				"value": "mydb"
 			}
 		}
 	},
