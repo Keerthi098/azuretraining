@@ -48,7 +48,17 @@
 				"outputs": [
 					{
 						"referenceName": "outputcsv",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"ouputcontainername": {
+								"value": "@pipeline().parameters.OutputContainer",
+								"type": "Expression"
+							},
+							"outputfilename": {
+								"value": "@pipeline().parameters.Outputfilename",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
