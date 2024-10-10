@@ -2,17 +2,22 @@
 	"name": "MySql1",
 	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
+		"parameters": {
+			"database": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"type": "MySql",
 		"typeProperties": {
 			"server": "localhost",
 			"port": 3306,
-			"database": "mydb",
+			"database": "@{linkedService().database}",
 			"username": "root",
 			"sslMode": 1,
 			"useSystemTrustStore": 0,
 			"driverVersion": "v2",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIyZjMwODgwYi04M2RjLTRiOTktODA0ZC01ZTI5YzdiMmYwZjQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI1NGYxZWU4NS01MjUzLTQxMGEtOTJjYy0wZDM4NDYyMGE4NWMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "SHIR",
