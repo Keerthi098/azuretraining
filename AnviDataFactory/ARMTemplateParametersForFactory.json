@@ -14,8 +14,20 @@
 		"InputBlob_connectionString": {
 			"value": ""
 		},
+		"MySql1_password": {
+			"value": ""
+		},
 		"Output_password": {
 			"value": ""
+		},
+		"MySql1_properties_typeProperties_server": {
+			"value": "localhost"
+		},
+		"MySql1_properties_typeProperties_database": {
+			"value": "mydb"
+		},
+		"MySql1_properties_typeProperties_username": {
+			"value": "root"
 		},
 		"Output_properties_typeProperties_server": {
 			"value": "azuredatabas.database.windows.net"

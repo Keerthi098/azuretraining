@@ -2,5 +2,9 @@
 	"GlobalParameter": {
 		"type": "string",
 		"value": "input"
+	},
+	"schema_name_global": {
+		"type": "string",
+		"value": "mydb"
 	}
 }
