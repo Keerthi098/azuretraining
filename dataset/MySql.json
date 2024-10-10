@@ -9,7 +9,7 @@
 			"tablename": {
 				"type": "string"
 			},
-			"database": {
+			"database_pipeline": {
 				"type": "string"
 			}
 		},
