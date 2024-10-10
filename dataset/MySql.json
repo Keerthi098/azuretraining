@@ -5,11 +5,19 @@
 			"referenceName": "MySql1",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"tablename": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "MySqlTable",
 		"schema": [],
 		"typeProperties": {
-			"tableName": "`account`"
+			"tableName": {
+				"value": "@dataset().tablename",
+				"type": "Expression"
+			}
 		}
 	}
 }
