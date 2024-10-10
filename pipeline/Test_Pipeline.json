@@ -1,0 +1,49 @@
+{
+	"name": "Test_Pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Test_Pipeline",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Copy_data",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"Inputfilename": {
+							"value": "@pipeline().parameters.Test_PP_Filename",
+							"type": "Expression"
+						},
+						"OutputFilename": {
+							"value": "@pipeline().parameters.Test_PP_outputFilename",
+							"type": "Expression"
+						},
+						"OutputContainername": {
+							"value": "@pipeline().parameters.Test_PP_OutputContainer",
+							"type": "Expression"
+						}
+					}
+				}
+			}
+		],
+		"parameters": {
+			"Test_PP_Filename": {
+				"type": "string"
+			},
+			"Test_PP_outputFilename": {
+				"type": "string"
+			},
+			"Test_PP_OutputContainer": {
+				"type": "string"
+			}
+		},
+		"annotations": []
+	}
+}
