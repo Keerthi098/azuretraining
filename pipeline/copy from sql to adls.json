@@ -82,9 +82,6 @@
 			},
 			"Table_name": {
 				"type": "string"
-			},
-			"Databasepipeline": {
-				"type": "string"
 			}
 		},
 		"annotations": []
