@@ -18,7 +18,7 @@
 					"source": {
 						"type": "MySqlSource",
 						"query": {
-							"value": "@concat('select * from',pipeline().globalParameters.schema_name_global,'.',pipeline().parameters.table_name)",
+							"value": "select* from('pipeline().parameters.table_name')",
 							"type": "Expression"
 						}
 					},

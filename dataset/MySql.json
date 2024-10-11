@@ -3,7 +3,13 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "MySql1",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"database": {
+					"value": "@dataset().database_pipeline",
+					"type": "Expression"
+				}
+			}
 		},
 		"parameters": {
 			"tablename": {
