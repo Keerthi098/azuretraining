@@ -57,7 +57,14 @@
 						{
 							"name": "Firstname",
 							"type": "SetVariable",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "Employeeid",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
 							"policy": {
 								"secureOutput": false,
 								"secureInput": false
@@ -166,6 +173,23 @@
 									"type": "Expression"
 								}
 							}
+						},
+						{
+							"name": "Employeeid",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Employeeid",
+								"value": {
+									"value": "@item().Employeeid",
+									"type": "Expression"
+								}
+							}
 						}
 					]
 				}
@@ -191,6 +215,9 @@
 			},
 			"Email": {
 				"type": "String"
+			},
+			"Employeeid": {
+				"type": "Integer"
 			}
 		},
 		"annotations": []
