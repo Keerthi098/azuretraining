@@ -33,7 +33,7 @@
 		},
 		"MySql1_properties_typeProperties_database": {
 			"type": "string",
-			"defaultValue": "mydb"
+			"defaultValue": "@{linkedService().database}"
 		},
 		"MySql1_properties_typeProperties_username": {
 			"type": "string",

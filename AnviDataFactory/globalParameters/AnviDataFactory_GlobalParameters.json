@@ -6,5 +6,9 @@
 	"schema_name_global": {
 		"type": "string",
 		"value": "mydb"
+	},
+	"Global_database": {
+		"type": "string",
+		"value": "mydb"
 	}
 }

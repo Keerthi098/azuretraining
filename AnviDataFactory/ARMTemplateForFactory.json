@@ -33,7 +33,7 @@
 		},
 		"MySql1_properties_typeProperties_database": {
 			"type": "string",
-			"defaultValue": "mydb"
+			"defaultValue": "@{linkedService().database}"
 		},
 		"MySql1_properties_typeProperties_username": {
 			"type": "string",
@@ -486,6 +486,10 @@
 									"tablename": {
 										"value": "@pipeline().parameters.Table_name",
 										"type": "Expression"
+									},
+									"database_pipeline": {
+										"value": "@pipeline().globalParameters.schema_name_global",
+										"type": "Expression"
 									}
 								}
 							}
@@ -530,16 +534,84 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/lookup')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Lookup1",
+						"type": "Lookup",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "MySqlSource"
+							},
+							"dataset": {
+								"referenceName": "MySql",
+								"type": "DatasetReference",
+								"parameters": {
+									"tablename": {
+										"value": "@pipeline().parameters.table_name",
+										"type": "Expression"
+									},
+									"database_pipeline": {
+										"value": "@pipeline().globalParameters.schema_name_global",
+										"type": "Expression"
+									}
+								}
+							},
+							"firstRowOnly": false
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"parameters": {
+					"table_name": {
+						"type": "string"
+					}
+				},
+				"variables": {
+					"customerid": {
+						"type": "Integer"
+					}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/MySql')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/MySql')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
 					"referenceName": "MySql1",
-					"type": "LinkedServiceReference"
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"database": {
+							"value": "@dataset().database_pipeline",
+							"type": "Expression"
+						}
+					}
 				},
 				"parameters": {
 					"tablename": {
+						"type": "string"
+					},
+					"database_pipeline": {
 						"type": "string"
 					}
 				},
@@ -800,6 +872,11 @@
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"parameters": {
+					"database": {
+						"type": "String"
+					}
+				},
 				"annotations": [],
 				"type": "MySql",
 				"typeProperties": {

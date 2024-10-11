@@ -24,7 +24,7 @@
 			"value": "localhost"
 		},
 		"MySql1_properties_typeProperties_database": {
-			"value": "mydb"
+			"value": "@{linkedService().database}"
 		},
 		"MySql1_properties_typeProperties_username": {
 			"value": "root"
