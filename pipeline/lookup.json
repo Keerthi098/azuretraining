@@ -1,0 +1,50 @@
+{
+	"name": "lookup",
+	"properties": {
+		"activities": [
+			{
+				"name": "Lookup1",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "MySqlSource",
+						"query": {
+							"value": "@concat('select * from',pipeline().globalParameters.schema_name_global,'.',pipeline().parameters.table_name)",
+							"type": "Expression"
+						}
+					},
+					"dataset": {
+						"referenceName": "MySql",
+						"type": "DatasetReference",
+						"parameters": {
+							"tablename": {
+								"value": "@pipeline().parameters.table_name",
+								"type": "Expression"
+							},
+							"database_pipeline": {
+								"value": "@pipeline().globalParameters.schema_name_global",
+								"type": "Expression"
+							}
+						}
+					},
+					"firstRowOnly": false
+				}
+			}
+		],
+		"parameters": {
+			"table_name": {
+				"type": "string"
+			}
+		},
+		"annotations": []
+	}
+}
