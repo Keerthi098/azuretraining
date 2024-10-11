@@ -16,11 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "MySqlSource",
-						"query": {
-							"value": "select* from('pipeline().parameters.table_name')",
-							"type": "Expression"
-						}
+						"type": "MySqlSource"
 					},
 					"dataset": {
 						"referenceName": "MySql",
@@ -37,6 +33,25 @@
 						}
 					},
 					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Lookup1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Lookup1').output",
+						"type": "Expression"
+					}
 				}
 			}
 		],
