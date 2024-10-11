@@ -34,6 +34,34 @@
 					},
 					"firstRowOnly": false
 				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "customerid",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "customerid",
+								"value": {
+									"value": "@item().customerid",
+									"type": "Expression"
+								}
+							}
+						}
+					]
+				}
 			}
 		],
 		"parameters": {
@@ -42,22 +70,7 @@
 			}
 		},
 		"variables": {
-			"First_name": {
-				"type": "String"
-			},
-			"Last_name": {
-				"type": "String"
-			},
-			"Salary": {
-				"type": "String"
-			},
-			"Hire_date": {
-				"type": "Array"
-			},
-			"Email": {
-				"type": "String"
-			},
-			"Employeeid": {
+			"customerid": {
 				"type": "Integer"
 			}
 		},
