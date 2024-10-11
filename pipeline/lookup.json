@@ -51,13 +51,118 @@
 					"items": {
 						"value": "@activity('Lookup1').output",
 						"type": "Expression"
-					}
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Firstname",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "First_name",
+								"value": {
+									"value": "@item().First_name",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Lastname",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Last_name",
+								"value": {
+									"value": "@item().Last_name",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Salary",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Salary",
+								"value": {
+									"value": "@item().Salary",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Hiredate",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Hire_date",
+								"value": {
+									"value": "@item().Hire_date",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Email",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Email",
+								"value": {
+									"value": "@item().Email",
+									"type": "Expression"
+								}
+							}
+						}
+					]
 				}
 			}
 		],
 		"parameters": {
 			"table_name": {
 				"type": "string"
+			}
+		},
+		"variables": {
+			"First_name": {
+				"type": "String"
+			},
+			"Last_name": {
+				"type": "String"
+			},
+			"Salary": {
+				"type": "String"
+			},
+			"Hire_date": {
+				"type": "String"
+			},
+			"Email": {
+				"type": "String"
 			}
 		},
 		"annotations": []
