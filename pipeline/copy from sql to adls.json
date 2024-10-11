@@ -16,7 +16,11 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "MySqlSource"
+						"type": "MySqlSource",
+						"query": {
+							"value": "@concat('Select * From',pipeline().globalParameters.schema_name_global,'.',pipeline().parameters.Table_name)\n\n\n",
+							"type": "Expression"
+						}
 					},
 					"sink": {
 						"type": "DelimitedTextSink",
