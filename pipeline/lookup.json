@@ -211,7 +211,7 @@
 				"type": "String"
 			},
 			"Hire_date": {
-				"type": "String"
+				"type": "Array"
 			},
 			"Email": {
 				"type": "String"
