@@ -58,7 +58,7 @@
 							"typeProperties": {
 								"variableName": "File_name",
 								"value": {
-									"value": "@item().id",
+									"value": "@item().physicalName",
 									"type": "Expression"
 								}
 							}
