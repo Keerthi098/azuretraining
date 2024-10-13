@@ -19,7 +19,11 @@
 						"referenceName": "OutputSQLTable",
 						"type": "DatasetReference",
 						"parameters": {
-							"filename": "employees"
+							"filename": "employees",
+							"schema": {
+								"value": "@pipeline().globalParameters.schema_name_global",
+								"type": "Expression"
+							}
 						}
 					},
 					"fieldList": [
