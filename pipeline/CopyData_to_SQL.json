@@ -65,7 +65,8 @@
 							"filename": {
 								"value": "@pipeline().parameters.outputfilename",
 								"type": "Expression"
-							}
+							},
+							"schema": "dbo"
 						}
 					}
 				]
