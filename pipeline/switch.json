@@ -14,7 +14,7 @@
 					},
 					"cases": [
 						{
-							"value": "employees",
+							"value": "employees.csv",
 							"activities": [
 								{
 									"name": "Copy data1",
@@ -63,11 +63,13 @@
 									},
 									"inputs": [
 										{
-											"referenceName": "inputcsvfile",
+											"referenceName": "NewCSVInputFolder",
 											"type": "DatasetReference",
 											"parameters": {
-												"Containername": "input",
-												"filename": "employee"
+												"filename": {
+													"value": "@pipeline().parameters.File_name",
+													"type": "Expression"
+												}
 											}
 										}
 									],
@@ -85,7 +87,7 @@
 							]
 						},
 						{
-							"value": "employees.csv",
+							"value": "departments.csv",
 							"activities": [
 								{
 									"name": "Set variable1",
