@@ -72,10 +72,6 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"container_name": {
-											"value": "@pipeline().parameters.container_name_pipe",
-											"type": "Expression"
-										},
-										"file_name": {
 											"value": "@item().name",
 											"type": "Expression"
 										}
