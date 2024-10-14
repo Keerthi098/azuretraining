@@ -19,7 +19,7 @@
 						"referenceName": "Container_input",
 						"type": "DatasetReference",
 						"parameters": {
-							"input": "input"
+							"Containername": "input"
 						}
 					},
 					"fieldList": [
@@ -68,14 +68,25 @@
 							"userProperties": [],
 							"typeProperties": {
 								"dataset": {
-									"referenceName": "Container_input",
+									"referenceName": "inputcsvfile",
 									"type": "DatasetReference",
 									"parameters": {
-										"input": {
+										"Containername": {
+											"value": "@pipeline().parameters.PipeLineContainer",
+											"type": "Expression"
+										},
+										"filename": {
 											"value": "@item().name",
 											"type": "Expression"
 										}
 									}
+								},
+								"logStorageSettings": {
+									"linkedServiceName": {
+										"referenceName": "AzureBlobStorage_inputfolder",
+										"type": "LinkedServiceReference"
+									},
+									"path": "input"
 								},
 								"enableLogging": true,
 								"storeSettings": {
@@ -89,6 +100,11 @@
 				}
 			}
 		],
+		"parameters": {
+			"PipeLineContainer": {
+				"type": "string"
+			}
+		},
 		"variables": {
 			"File_name": {
 				"type": "String"
