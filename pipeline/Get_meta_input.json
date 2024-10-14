@@ -58,6 +58,7 @@
 								"secureOutput": false,
 								"secureInput": false
 							},
+							"userProperties": [],
 							"typeProperties": {
 								"variableName": "File_name",
 								"value": {
