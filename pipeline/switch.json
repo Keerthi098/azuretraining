@@ -14,7 +14,7 @@
 					},
 					"cases": [
 						{
-							"value": "employees.csv",
+							"value": "employees",
 							"activities": [
 								{
 									"name": "Copy data1",
@@ -87,7 +87,7 @@
 							]
 						},
 						{
-							"value": "departments.csv",
+							"value": "departments",
 							"activities": [
 								{
 									"name": "Set variable1",
