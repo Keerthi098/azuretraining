@@ -2,7 +2,7 @@
 	"name": "Container_input",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage_inputfolder",
+			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
