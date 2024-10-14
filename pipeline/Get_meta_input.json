@@ -27,6 +27,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
+						"modifiedDatetimeEnd": "2024-10-14T00:00:00.000Z",
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -54,19 +55,44 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "Set variable1",
-							"type": "SetVariable",
+							"name": "Delete1",
+							"type": "Delete",
 							"dependsOn": [],
 							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
 								"secureOutput": false,
 								"secureInput": false
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "File_name",
-								"value": {
-									"value": "@item().name",
-									"type": "Expression"
+								"dataset": {
+									"referenceName": "Container_input",
+									"type": "DatasetReference",
+									"parameters": {
+										"container_name": {
+											"value": "@pipeline().parameters.container_name_pipe",
+											"type": "Expression"
+										},
+										"file_name": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
+									}
+								},
+								"logStorageSettings": {
+									"linkedServiceName": {
+										"referenceName": "AzureBlobStorage1",
+										"type": "LinkedServiceReference"
+									},
+									"path": "input"
+								},
+								"enableLogging": true,
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
 								}
 							}
 						}
@@ -74,6 +100,11 @@
 				}
 			}
 		],
+		"parameters": {
+			"container_name_pipe": {
+				"type": "string"
+			}
+		},
 		"variables": {
 			"File_name": {
 				"type": "String"
