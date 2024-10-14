@@ -58,7 +58,6 @@
 								"secureOutput": false,
 								"secureInput": false
 							},
-							"userProperties": [],
 							"typeProperties": {
 								"variableName": "",
 								"value": ""
@@ -68,9 +67,9 @@
 				}
 			}
 		],
-		"parameters": {
+		"variables": {
 			"File_name": {
-				"type": "string"
+				"type": "String"
 			}
 		},
 		"annotations": []
