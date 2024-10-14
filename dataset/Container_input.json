@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"container_name": {
+			"input": {
 				"type": "string"
 			}
 		},
@@ -16,7 +16,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"container": {
-					"value": "@dataset().container_name",
+					"value": "@dataset().input",
 					"type": "Expression"
 				}
 			},
