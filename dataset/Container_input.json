@@ -1,0 +1,39 @@
+{
+	"name": "Container_input",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage_inputfolder",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "HouseID",
+				"type": "String"
+			},
+			{
+				"name": "HouseNumber",
+				"type": "String"
+			},
+			{
+				"name": "Name",
+				"type": "String"
+			},
+			{
+				"name": "phonenumber",
+				"type": "String"
+			}
+		]
+	}
+}
