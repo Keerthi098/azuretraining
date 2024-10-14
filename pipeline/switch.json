@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"on": {
-						"value": "@pipeline().parameters.File_name",
+						"value": "@pipeline().parameters.Filenamepip",
 						"type": "Expression"
 					},
 					"cases": [
@@ -67,7 +67,7 @@
 											"type": "DatasetReference",
 											"parameters": {
 												"filename": {
-													"value": "@pipeline().parameters.File_name",
+													"value": "@pipeline().parameters.Filenamepip",
 													"type": "Expression"
 												}
 											}
@@ -101,7 +101,7 @@
 									"typeProperties": {
 										"variableName": "inputvariable",
 										"value": {
-											"value": "@pipeline().parameters.File_name",
+											"value": "@pipeline().parameters.Filenamepip",
 											"type": "Expression"
 										}
 									}
