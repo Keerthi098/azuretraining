@@ -17,17 +17,14 @@
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "Container_input",
-						"type": "DatasetReference",
-						"parameters": {
-							"Containername": "input"
-						}
+						"type": "DatasetReference"
 					},
 					"fieldList": [
 						"childItems"
 					],
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
-						"modifiedDatetimeEnd": null,
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -72,7 +69,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"Containername": {
-											"value": "@pipeline().parameters.PipeLineContainer",
+											"value": "@pipeline().parameters.container_name",
 											"type": "Expression"
 										},
 										"filename": {
@@ -83,7 +80,7 @@
 								},
 								"logStorageSettings": {
 									"linkedServiceName": {
-										"referenceName": "AzureBlobStorage_inputfolder",
+										"referenceName": "AzureBlobStorage1",
 										"type": "LinkedServiceReference"
 									},
 									"path": "input"
@@ -101,12 +98,15 @@
 			}
 		],
 		"parameters": {
-			"PipeLineContainer": {
+			"container_name": {
 				"type": "string"
 			}
 		},
 		"variables": {
 			"File_name": {
+				"type": "String"
+			},
+			"inputvariable": {
 				"type": "String"
 			}
 		},

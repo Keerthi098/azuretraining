@@ -13,7 +13,7 @@
 						"type": "Expression"
 					},
 					"condition": {
-						"value": "@greater(item(),3 )",
+						"value": "@less(item(),3 )",
 						"type": "Expression"
 					}
 				}
@@ -37,7 +37,7 @@
 				"typeProperties": {
 					"variableName": "filter_input",
 					"value": {
-						"value": "@activity('Filter1').output",
+						"value": "@activity('Filter1').output.value",
 						"type": "Expression"
 					}
 				}
@@ -49,16 +49,18 @@
 				"defaultValue": [
 					1,
 					2,
-					3
+					3,
+					6,
+					8
 				]
-			},
-			"condition": {
-				"type": "string"
 			}
 		},
 		"variables": {
 			"filter_input": {
 				"type": "Array"
+			},
+			"inputvariable": {
+				"type": "String"
 			}
 		},
 		"annotations": []
