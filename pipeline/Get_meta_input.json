@@ -59,8 +59,11 @@
 								"secureInput": false
 							},
 							"typeProperties": {
-								"variableName": "",
-								"value": ""
+								"variableName": "File_name",
+								"value": {
+									"value": "@item().name",
+									"type": "Expression"
+								}
 							}
 						}
 					]
