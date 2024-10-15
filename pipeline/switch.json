@@ -64,13 +64,7 @@
 									"inputs": [
 										{
 											"referenceName": "NewCSVInputFolder",
-											"type": "DatasetReference",
-											"parameters": {
-												"filename": {
-													"value": "@pipeline().parameters.Filenamepip",
-													"type": "Expression"
-												}
-											}
+											"type": "DatasetReference"
 										}
 									],
 									"outputs": [
