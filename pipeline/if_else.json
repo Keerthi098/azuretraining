@@ -31,6 +31,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"expression": {
+						"value": "@contains(activity('Filter1').output.value,4)",
+						"type": "Expression"
+					},
 					"ifTrueActivities": [
 						{
 							"name": "Set variable1",
@@ -44,7 +48,7 @@
 							"typeProperties": {
 								"variableName": "var_name",
 								"value": {
-									"value": "@contains(activity('Filter1').output.value,4 )",
+									"value": "@activity('Filter1').output",
 									"type": "Expression"
 								}
 							}
@@ -55,7 +59,7 @@
 		],
 		"parameters": {
 			"value": {
-				"type": "object",
+				"type": "array",
 				"defaultValue": [
 					1,
 					2,
