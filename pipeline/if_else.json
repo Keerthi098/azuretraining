@@ -1,0 +1,75 @@
+{
+	"name": "if_else",
+	"properties": {
+		"activities": [
+			{
+				"name": "Filter1",
+				"type": "Filter",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.value",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@greater(item(), 3)",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"dependsOn": [
+					{
+						"activity": "Filter1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"ifTrueActivities": [
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "var_name",
+								"value": {
+									"value": "@contains(activity('Filter1').output.value,4 )",
+									"type": "Expression"
+								}
+							}
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"value": {
+				"type": "object",
+				"defaultValue": [
+					1,
+					2,
+					4,
+					6,
+					7
+				]
+			}
+		},
+		"variables": {
+			"var_name": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
