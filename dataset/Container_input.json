@@ -18,14 +18,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "@dataset().filename",
-					"type": "Expression"
-				},
-				"container": {
-					"value": "@dataset().Containername",
-					"type": "Expression"
-				}
+				"fileName": "employees.csv",
+				"container": "newinput"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
