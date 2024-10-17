@@ -15,6 +15,10 @@
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
+				"parameters{",
+				"     container_name as string,",
+				"     filename as string",
+				"}",
 				"source(output(",
 				"          HouseID as string,",
 				"          HouseNumber as string,",
