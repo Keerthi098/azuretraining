@@ -18,11 +18,11 @@
 					"notebookPath": "/Repos/project_of_Azuretraining/azuretraining/Anvinotebook",
 					"baseParameters": {
 						"A": {
-							"value": "@pipeline().parameters.A",
+							"value": "@pipeline().parameters.input_a",
 							"type": "Expression"
 						},
 						"B": {
-							"value": "@pipeline().parameters.B",
+							"value": "@pipeline().parameters.input_b",
 							"type": "Expression"
 						}
 					}
@@ -51,23 +51,23 @@
 				"typeProperties": {
 					"variableName": "output",
 					"value": {
-						"value": "@activity('Notebook1').output",
+						"value": "@activity('Notebook1').output.runOutput",
 						"type": "Expression"
 					}
 				}
 			}
 		],
 		"parameters": {
-			"A": {
+			"input_a": {
 				"type": "string"
 			},
-			"B": {
+			"input_b": {
 				"type": "string"
 			}
 		},
 		"variables": {
 			"output": {
-				"type": "String"
+				"type": "Integer"
 			}
 		},
 		"annotations": []
