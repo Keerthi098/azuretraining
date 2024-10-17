@@ -1,0 +1,46 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Notebook1",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Repos/project_of_Azuretraining/azuretraining/Untitled Notebook 2024-10-17 12_51_12",
+					"baseParameters": {
+						"A": {
+							"value": "@pipeline().parameters.A",
+							"type": "Expression"
+						},
+						"B": {
+							"value": "@pipeline().parameters.B",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"A": {
+				"type": "string"
+			},
+			"B": {
+				"type": "string"
+			}
+		},
+		"annotations": []
+	}
+}
