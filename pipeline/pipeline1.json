@@ -15,7 +15,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Repos/project_of_Azuretraining/azuretraining/Untitled Notebook 2024-10-17 12_51_12",
+					"notebookPath": "/Repos/project_of_Azuretraining/azuretraining/Anvinotebook",
 					"baseParameters": {
 						"A": {
 							"value": "@pipeline().parameters.A",
