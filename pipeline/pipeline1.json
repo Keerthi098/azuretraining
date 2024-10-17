@@ -17,11 +17,11 @@
 				"typeProperties": {
 					"notebookPath": "/Repos/project_of_Azuretraining/azuretraining/Anvinotebook",
 					"baseParameters": {
-						"A": {
+						"input_a": {
 							"value": "@pipeline().parameters.input_a",
 							"type": "Expression"
 						},
-						"B": {
+						"input_b": {
 							"value": "@pipeline().parameters.input_b",
 							"type": "Expression"
 						}
